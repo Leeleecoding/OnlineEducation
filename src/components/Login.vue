@@ -6,17 +6,30 @@
                 <img src="../assets/img/logo.png" alt="">
             </div>
             <!-- 表单区 -->
+                <!-- prop代表需要验证 -->
             <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" label-width="0px" class="login_form">
                 <el-form-item  prop="username">
-                    <el-input v-model="loginForm.username" prefix-icon="el-icon-user"></el-input>
+                  <el-input v-model="loginForm.username" prefix-icon="el-icon-user" placeholder="用户名"></el-input>
                 </el-form-item>
-                <el-form-item prop="password">
-                    <el-input v-model="loginForm.password" prefix-icon="el-icon-lock" type="password" ></el-input>
+                <el-form-item prop="password" >
+                  <el-input v-model="loginForm.password" prefix-icon="el-icon-lock" placeholder="密码" type="password" ></el-input>
                 </el-form-item>
-                <el-form-item class="btns">
-                    <el-button type="primary" @click="login">登录</el-button>
-                    <el-button type="info" @click="resetLoginForm">重置</el-button>
-                </el-form-item>
+                <el-row>
+                  <el-col :span="12">
+                    <el-form-item prop="usertype" >
+                        <el-select v-model="loginForm.usertype" placeholder="请选择用户类型">
+                          <el-option v-for="item in usertypes" :key="item.value" :label="item.label" :value="item.value"></el-option>
+                        </el-select>
+                    </el-form-item>
+                  </el-col>
+                  <el-col :span="12">
+                    <el-form-item class="btns" >
+                        <!-- <span style="margin: 0 10px"></span> -->
+                        <el-button type="primary" @click="login">登录</el-button>
+                        <el-button type="info" @click="resetLoginForm">重置</el-button>
+                    </el-form-item>
+                  </el-col>
+                </el-row>
             </el-form>
         </div>
     </div>
@@ -27,9 +40,20 @@ export default {
   data () {
     return {
       loginForm: {
-        username: 'admin',
-        password: '123456'
+        username: '',
+        password: '',
+        usertype: ''
       },
+      usertypes: [
+        {
+          value: '选项1',
+          label: '学生'
+        },
+        {
+          value: '选项2',
+          label: '教师'
+        }
+      ],
       // 验证规则
       loginFormRules: {
         username: [
@@ -39,9 +63,11 @@ export default {
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' },
           { min: 6, max: 20, message: '长度在 6 到 20 个字符', trigger: 'blur' }
+        ],
+        usertype: [
+          { required: true, message: '请选择用户类型', trigger: 'change' }
         ]
       }
-
     }
   },
   methods: {
@@ -101,7 +127,7 @@ export default {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 0 20px;
+    padding: 10px 20px;
     box-sizing: border-box;
 }
 .btns{
