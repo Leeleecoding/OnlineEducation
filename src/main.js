@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import './plugins/element.js'
 import './assets/css/global.css'
+import SvgIcon from './components/SvgIcon.vue'
 import Timetable from './components/Timetable.vue'
 import Notice from './components/Notice.vue'
 import { vueBaberrage } from 'vue-baberrage'
@@ -16,6 +17,7 @@ axios.interceptors.request.use(config => {
 Vue.prototype.$http = axios
 Vue.config.productionTip = false
 
+Vue.component('SvgIcon', SvgIcon)
 Vue.component('Timetable', Timetable)
 Vue.component('Notice', Notice)
 Vue.use(vueBaberrage)

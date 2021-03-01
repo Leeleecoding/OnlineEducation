@@ -1,5 +1,5 @@
 <template>
-    <div class="container" style="background-color: #eee;">
+    <div class="container" style="background-color: #eee;height: 100%;">
         <div class="page">
             <div class="blank-bar"></div>
             <el-row :gutter="20">
@@ -29,9 +29,6 @@
                           <div class="key">学号</div>
                           <div class="value">3180608001</div>
                         </div>
-                        <div class="user-logout">
-                          <el-button type="danger" plain @click="logout()">退出</el-button>
-                        </div>
                     </div>
                 </el-col>
                 <el-col :span="13">
@@ -54,7 +51,7 @@ export default {
       this.$router.push('/login')
     },
     goClass () {
-      MessageBox.alert('《Java程序设计》将在五分钟后上课，请尽快进入课堂', '上课提醒', {
+      MessageBox.alert('《JAVA EE与中间件技术》将在五分钟后上课，请尽快进入课堂', '上课提醒', {
         confirmButtonText: '跳转进入',
         callback: action => {
           if (action) {
@@ -68,11 +65,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.color {
-  background-color: #999;
-  height: 90px;
-  margin: 5px 10px;
-}
 .page {
   width: 1400px;
   height: 100%;
@@ -83,7 +75,7 @@ export default {
   }
   .userInfo {
     margin-left: 30px;
-    height:500px;
+    height:400px;
     box-shadow: 2px 1px 5px #999;
     border-radius: 20px;
     display: flex;
@@ -148,11 +140,6 @@ export default {
       padding-left: 20px;
       display: flex;
       flex-direction: column;
-    }
-    .user-logout{
-    position: relative;
-    top: 40px;
-    left: 30%;
     }
   }
 }

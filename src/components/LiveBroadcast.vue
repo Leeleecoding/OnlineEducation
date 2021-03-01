@@ -33,34 +33,15 @@
       </div>
       <!-- 视频区域 -->
       <div class="video" :style="'height:' + videoHeight + 'px'">
-        <!-- <img
-          src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587064531251&di=f1c0fb7dd50c2b145f6d2e3d0c2f6399&imgtype=0&src=http%3A%2F%2Fwww.bio-review.com%2Fwp-content%2Fuploads%2F2017%2F07%2Fcheckpoint.jpg"
-          alt
-        /> -->
         <video id="video" width="100%" height="100%" preload loop autoplay muted>
         <source
-          src="../assets/video/example.mp4"
+          src="../assets/video/live.mp4"
           type="video/mp4"
         />
       </video>
       </div>
       <!-- 底部工具栏 -->
       <div class="left-bottom" :style="'opacity:'+leftBottomOpacity+'%;'">
-        <!-- <div style="float:left">
-          <i class="el-icon-lock" style="margin:0 10px 0 5px;color:#409eff;float:left"></i>
-        </div>-->
-        <!-- <div class="slider">
-          <i class="el-icon-lock" style="margin:0 0 0 25px;color:#409eff"></i>
-          <div class="block">
-            <el-slider
-              v-model="leftBottomOpacity"
-              vertical
-              height="30px"
-              :min="0"
-              style="margin:15px 0 0 15px"
-            ></el-slider>
-          </div>
-        </div> -->
         <div class="buttonBox" @click="goHome">
           <i class="el-icon-remove-outline" style="color:#f88 !important"></i>
           <div style="color:#f88 !important">退出课堂</div>
@@ -340,10 +321,6 @@ export default {
     }
   },
   beforeMount () {
-    // var pdf = require('pdfobject')
-    // this.$nextTick(function () {
-    //     pdf.embed("../assets/example.pdf", "#slider")
-    // })
   },
   mounted () {
     this.timer = setInterval(() => {

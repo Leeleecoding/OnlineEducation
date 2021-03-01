@@ -51,7 +51,7 @@ export default {
           {
             title: '算法设计与分析',
             time: '三天前',
-            info: '黄老师发布了作业：作业2',
+            info: '黄老师发布了预习视频',
             id: '3'
           }
         ]
@@ -72,7 +72,7 @@ export default {
             id: '5'
           },
           {
-            title: '计算机结构',
+            title: '计算机网络',
             time: '需要提交：第三章作业',
             info: '截止日期：11月12日 23:59',
             id: '6'
@@ -125,7 +125,7 @@ export default {
         padding: 5px 0;
         cursor: pointer;
     }
-    .noticeInfo-footer:hover,.deadlineInfo-footer {
+    .noticeInfo-footer:hover,.deadlineInfo-footer:hover {
             color: #027db4;
     }
 }
