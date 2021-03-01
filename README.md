@@ -1,27 +1,27 @@
-# hello
+# OnlineEducation项目说明
 
-## Project setup
+## 项目安装运行依赖
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 编译和热更新（用于开发环境）
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 编译并压缩（用于生产环境）
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### 检查并修复源文件代码规范性
 ```
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 参考官方文档
+查看 [ @vue/cli 的使用文档 ](https://cli.vuejs.org/config/).
 
 ### 待完成
 - 直播页面弹幕替换,问题替换,课件替换,参考书籍替换
