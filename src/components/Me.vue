@@ -1,6 +1,6 @@
 /* eslint-disable */
 <template>
-  <div class="container" style="background-color: #eee;height: 100%">
+  <div class="container">
     <div class="page">
       <div class="blank-bar"></div>
       <el-row :gutter="20">
@@ -149,6 +149,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.container{
+  background-color: #eee;
+  height: 100%;
+}
 .title {
   margin: 20px 15px 10px 22px;
   color: #999;
