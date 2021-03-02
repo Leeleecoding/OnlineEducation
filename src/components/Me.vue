@@ -35,21 +35,27 @@
         </el-col>
 
         <el-col :span="13">
-          <div class="title">基本设置：</div>
+          <div class="title">基本功能：</div>
           <div class="basicSetting">
             <el-collapse v-model="activeName" accordion>
-              <el-collapse-item title="安全 Security" name="1">
+              <el-collapse-item title="账号安全 Security" name="1">
                 <div><a >修改密码</a></div>
                 <div><a >绑定邮件</a></div>
                 <div><a >绑定手机</a></div>
               </el-collapse-item>
-              <el-collapse-item title="反馈 Feedback" name="2">
+              <el-collapse-item title="课表导入 Introduction of Timetable" name="2">
+              </el-collapse-item>
+              <el-collapse-item title="学习统计 Learning Statistics" name="3">
+              </el-collapse-item>
+              <el-collapse-item title="我的讨论 Discussion Management" name="4">
+              </el-collapse-item>
+              <el-collapse-item title="信息反馈 Feedback" name="5">
                 <div>如果您在使用系统过程中遇到问题或着有什么好的建议，请发送邮件到xxx@ujs.edu.cn联系我们</div>
                 <div>
                   <a href="https://mail.ujs.edu.cn/">点击发送邮件</a>
                 </div>
               </el-collapse-item>
-              <el-collapse-item title="关于 About" name="3">
+              <el-collapse-item title="关于我们 About" name="5">
                 <div>此网络教学平台由江苏大学某学生团队开发，仅供学习，请勿商用</div>
                 <div></div>
               </el-collapse-item>
@@ -153,9 +159,6 @@ export default {
   padding: 0 20px;
   box-shadow: 1px 1px 5px #999;
   border-radius: 10px;
-}
-.el-collapse-item__header{
-  font-size: 18px;
 }
 .specialSetting{
   overflow: hidden;

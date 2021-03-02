@@ -27,6 +27,26 @@
                 <span>小黑板</span>
               </template>
             </el-menu-item>
+            <!-- 讨论区 -->
+            <el-menu-item
+              :index="item.classID + '-discuss'"
+              @click="discussClick(item.classID)"
+            >
+              <template slot="title">
+                <i class="el-icon-chat-dot-round"></i>
+                <span>讨论区</span>
+              </template>
+            </el-menu-item>
+            <!-- 作业区 -->
+            <el-menu-item
+              :index="item.classID + '-homework'"
+              @click="homeworkClick(item.classID)"
+            >
+              <template slot="title">
+                <i class="el-icon-notebook-1"></i>
+                <span>作业区</span>
+              </template>
+            </el-menu-item>
           <!-- 课程直播 -->
             <el-menu-item
               :index="item.classID + '-livebroadcast'"
@@ -105,6 +125,14 @@ export default {
       this.setNavState(id + '-blackboard')
       if (this.$route.path !== ('/blackboard/' + id)) this.$router.push('/blackboard/' + id)
     },
+    discussClick (id) {
+      this.setNavState(id + '-discuss')
+      if (this.$route.path !== ('/discuss/' + id)) this.$router.push('/discuss/' + id)
+    },
+    homeworkClick (id) {
+      this.setNavState(id + '-homework')
+      if (this.$route.path !== ('/homework/' + id)) this.$router.push('/homework/' + id)
+    },
     livebroadcastClick (id) {
       this.setNavState(id + '-livebroadcast')
       if (this.$route.path !== ('/livebroadcast/' + id)) this.$router.push('/livebroadcast')
@@ -172,5 +200,9 @@ export default {
   display: flex;
   justify-content: space-around;
   margin-left: 100px;
+}
+.el-submenu .el-menu-item {
+    height: 30px;
+    line-height: 30px;
 }
 </style>

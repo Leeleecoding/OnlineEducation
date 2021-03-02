@@ -5,6 +5,8 @@ import Home from '../components/Home.vue'
 import Nav from '../components/Nav.vue'
 import Course from '../components/Course.vue'
 import Blackboard from '../components/Blackboard.vue'
+import Discuss from '../components/Discuss.vue'
+import Homework from '../components/Homework.vue'
 import Attention from '../components/Attention.vue'
 import Me from '../components/Me.vue'
 import Live from '../components/LiveBroadcast.vue'
@@ -25,9 +27,11 @@ const router = new VueRouter({
         {
           path: '/course',
           component: Course,
-          redirect: '/blackboard/CS285', // "课程"
+          redirect: '/blackboard/BIO1011', // "课程"
           children: [
-            { path: '/blackboard/:id', name: 'blackboard', component: Blackboard }
+            { path: '/blackboard/:id', name: 'blackboard', component: Blackboard },
+            { path: '/discuss/:id', name: 'discuss', component: Discuss },
+            { path: '/homework/:id', name: 'homework', component: Homework }
           ]
         },
         { path: '/attention', component: Attention }, // “专注”
