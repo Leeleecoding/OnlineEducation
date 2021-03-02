@@ -36,43 +36,64 @@
 
         <el-col :span="13">
           <div class="title">基本设置：</div>
+          <div class="basicSetting">
+            <el-collapse v-model="activeName" accordion>
+              <el-collapse-item title="安全 Security" name="1">
+                <div><a >修改密码</a></div>
+                <div><a >绑定邮件</a></div>
+                <div><a >绑定手机</a></div>
+              </el-collapse-item>
+              <el-collapse-item title="反馈 Feedback" name="2">
+                <div>如果您在使用系统过程中遇到问题或着有什么好的建议，请发送邮件到xxx@ujs.edu.cn联系我们</div>
+                <div>
+                  <a href="https://mail.ujs.edu.cn/">点击发送邮件</a>
+                </div>
+              </el-collapse-item>
+              <el-collapse-item title="关于 About" name="3">
+                <div>此网络教学平台由江苏大学某学生团队开发，仅供学习，请勿商用</div>
+                <div></div>
+              </el-collapse-item>
+            </el-collapse>
+          </div>
           <div class="title">特色功能：</div>
-          <el-card>
-            专注模式
-            <el-switch
-              v-model="attention.attentionMode"
-              active-color="#13ce66"
-              inactive-color="#ff4949"
-              style="float:right"
-            ></el-switch>
-          </el-card>
-          <el-card>
-            上课提醒
-            <el-switch
-              v-model="remind.class"
-              active-color="#13ce66"
-              inactive-color="#ff4949"
-              style="float:right"
-            ></el-switch>
-          </el-card>
-          <el-card>
-            新公告提醒
-            <el-switch
-              v-model="remind.notice"
-              active-color="#13ce66"
-              inactive-color="#ff4949"
-              style="float:right"
-            ></el-switch>
-          </el-card>
-          <el-card>
-            截止日期预警
-            <el-switch
-              v-model="remind.ddl"
-              active-color="#13ce66"
-              inactive-color="#ff4949"
-              style="float:right"
-            ></el-switch>
-          </el-card>
+          <div class="specialSetting">
+            <el-card>
+              专注模式 Focus Mode
+              <el-switch
+                v-model="attention.attentionMode"
+                active-color="#13ce66"
+                inactive-color="#ff4949"
+                style="float:right"
+              ></el-switch>
+            </el-card>
+            <el-card>
+              上课提醒 Class Remind
+              <el-switch
+                v-model="remind.class"
+                active-color="#13ce66"
+                inactive-color="#ff4949"
+                style="float:right"
+              ></el-switch>
+            </el-card>
+            <el-card>
+              新公告提醒 Announcement Remind
+              <el-switch
+                v-model="remind.notice"
+                active-color="#13ce66"
+                inactive-color="#ff4949"
+                style="float:right"
+              ></el-switch>
+            </el-card>
+            <el-card>
+              截止日期预警 Deadline Remind
+              <el-switch
+                v-model="remind.ddl"
+                active-color="#13ce66"
+                inactive-color="#ff4949"
+                style="float:right"
+              ></el-switch>
+            </el-card>
+          </div>
         </el-col>
         <el-col :span="6">
           <Notice></Notice>
@@ -98,7 +119,8 @@ export default {
         file: '',
         notice: '',
         ddl: ''
-      }
+      },
+      activeName: ''
     }
   },
   methods: {
@@ -125,6 +147,20 @@ export default {
   margin: 20px 15px 10px 22px;
   color: #999;
   font-size: 13px;
+}
+.basicSetting {
+  margin: 0 2px;
+  padding: 0 20px;
+  box-shadow: 1px 1px 5px #999;
+  border-radius: 10px;
+}
+.el-collapse-item__header{
+  font-size: 18px;
+}
+.specialSetting{
+  overflow: hidden;
+  box-shadow: 1px 1px 5px #999;
+  border-radius: 10px;
 }
 .page {
   width: 1400px;
