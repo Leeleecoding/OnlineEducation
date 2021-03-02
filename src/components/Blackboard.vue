@@ -4,9 +4,8 @@
       <el-col :span="24">
         <!-- 课前视频 -->
         <div class="video">
-          <div class="blank" style="height: 20px"></div>
           <div class="head">课前视频({{id}})</div>
-          <div class="blank" style="height: 30px"></div>
+          <div class="blank" style="height: 20px"></div>
           <div class="grid">
             <div class="video-card" v-for="item in previewList" :key="item"  @click="goBeforeVideo">
               <div class="img-box">
@@ -26,11 +25,10 @@
             </div>
           </div>
         </div>
-        <div class="blank" style="height: 80px"></div>
         <!-- 直播回放 -->
         <div class="video">
           <div class="head">直播回放</div>
-          <div class="blank" style="height: 30px"></div>
+          <div class="blank" style="height: 20px"></div>
           <div class="grid">
             <div class="video-card" v-for="item in previewList" :key="item" @click="goAfterVideo">
               <div class="img-box">
@@ -50,18 +48,30 @@
             </div>
           </div>
         </div>
+        <!-- 课件 -->
+        <div class="video">
+          <div class="head">课程资源</div>
+          <div class="blank" style="height: 20px"></div>
+          <div class="grid">
+            <div class="video-card" v-for="item in previewList" :key="item" @click="goSource">
+              <div class="img-box">
+                <div class="img-mask">
+                <img src="../assets/img/jsp.png" alt />
+                </div>
+              </div>
+              <div class="title">JSP参考书籍</div>
+              <div class="info">
+                <div class="time">
+                  <i class="el-icon-time"></i>8h前发布
+                </div>
+                <div class="remark">
+                  <i class="el-icon-chat-dot-round"></i>讨论：12
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </el-col>
-      <!-- <el-col :span="10">
-        <Notice :noticeInfo="noticeInfo"></Notice>
-        <el-row :gutter="10">
-          <el-col :span="12">
-            <Notice :noticeInfo="fileList"></Notice>
-          </el-col>
-          <el-col :span="12">
-            <Notice :noticeInfo="homeworkList"></Notice>
-          </el-col>
-        </el-row>
-      </el-col> -->
     </el-row>
   </div>
 </template>
@@ -83,77 +93,15 @@ export default {
     },
     goBeforeVideo () {
       this.$router.push('/beforeVideo')
+    },
+    goSource () {
+
     }
   },
   data () {
     return {
       previewList: [1, 2, 3, 4, 5, 6, 7],
-      id: 'CS285',
-      noticeInfo: {
-        head: '布告栏',
-        list: [
-          {
-            title: '下一次作业提交注意事项',
-            time: '3小时前 王安',
-            info:
-              '同学们好，请大家将下一次讨论的ppt转换成pdf之后，再上传到我们的Xedu系统中，不要因为形式的问题而导致上传错误，作业截止日期是这周六。',
-            id: 'ee115'
-          },
-          {
-            title: '机电一体化',
-            time: '10小时前 张锋',
-            info:
-              '上一次课堂上quiz的结果已经反馈到Xedu系统中，正确答案附在文件下载区，对这次批分有争议的同学请给助教或者老师发邮件，并附上批改后的pdf',
-            id: 'CS285'
-          }
-        ]
-      },
-      fileList: {
-        head: '课件下载',
-        list: [
-          {
-            title: '#第三章',
-            time: '10小时前 王安',
-            info: 'Chapter3.pdf',
-            id: 'ee115'
-          },
-          {
-            title: '#第二章',
-            time: '2020.4.1 王安',
-            info: 'Chapter2.pdf',
-            id: 'ee115'
-          },
-          {
-            title: '#第一章',
-            time: '2020.3.25 王安',
-            info: 'Chapter1.pdf',
-            id: 'ee115'
-          }
-        ]
-      },
-      homeworkList: {
-        head: '作业下载',
-        list: [
-          {
-            title: '#第三章',
-            time: '10小时前 王安',
-            info: 'Homework3.pdf',
-            id: 'ee115'
-          },
-          {
-            title: '#第二章',
-            time: '2020.4.1 王安',
-            info: 'Homework2.pdf',
-            id: 'ee115'
-          },
-          {
-            title: '#第一章',
-            time: '2020.3.25 王安',
-            info: 'Homework1.pdf',
-            id: 'ee115'
-          }
-        ]
-      }
+      id: ''
     }
   }
 }
